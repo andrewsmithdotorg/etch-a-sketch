@@ -1,8 +1,9 @@
 const gridContainer = document.querySelector("#container");
+let gridDimension = 16;
+
+for (let i = 0; i < 16; i++) {
 const gridSquare = document.createElement("div");
 gridSquare.classList.add('grid-square');
-gridSquare.textContent = "test";
-
 gridContainer.appendChild(gridSquare);
-
-gridContainer.style.backgroundColor = "lightgreen";
+gridSquare.style.height = (800/gridDimension)+"px";
+}

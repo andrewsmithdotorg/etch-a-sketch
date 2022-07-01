@@ -4,4 +4,13 @@
 
 #container {
     display: flex;
+    border: 1px solid black;
+    width: 800px;
+    justify-content: center;
+    margin: auto;
+}
+
+.grid-square {
+    flex: 1;
+    border: 1px solid black;
 }
