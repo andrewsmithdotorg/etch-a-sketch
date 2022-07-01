@@ -1,16 +1,21 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #container {
-    display: flex;
-    border: 1px solid black;
-    width: 800px;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  border: 1px solid black;
+  width: 600px;
+  justify-content: center;
+  margin: auto;
+}
+
+.grid-row {
+  flex: 1;
 }
 
 .grid-square {
-    flex: 1;
-    border: 1px solid black;
+  flex: 1;
+  border: 1px solid black;
+  background-color: white;
 }
