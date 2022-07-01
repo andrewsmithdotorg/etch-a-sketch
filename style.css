@@ -3,7 +3,6 @@
 }
 
 #container {
-  display: flex;
   border: 1px solid black;
   width: 600px;
   justify-content: center;
@@ -12,6 +11,7 @@
 
 .grid-row {
   flex: 1;
+  display: flex;
 }
 
 .grid-square {
