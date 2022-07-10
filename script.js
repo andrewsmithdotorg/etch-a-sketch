@@ -54,9 +54,9 @@ resizeButton.addEventListener("click", () => {
 
 function getNewSize() {
   let newSize = prompt("Pick a new size for the grid:");
-  while (isNaN(newSize) || newSize < 1 || newSize > 100) {
+  while (isNaN(newSize) || newSize < 1 || newSize > 100 || newSize % 1 != 0) {
     newSize = prompt(
-      "Hmm.  There's something wrong with your input.  Please enter a number between 1 and 100."
+      "Hmm.  There's something wrong with your input.  Please enter a whole number between 1 and 100."
     );
   }
   return newSize;
