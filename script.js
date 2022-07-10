@@ -44,10 +44,20 @@ function resetGrid() {
 
 const resizeButton = document.querySelector("#resize-button");
 resizeButton.addEventListener("click", () => {
-  gridDimension = 70;
+  gridDimension = getNewSize();
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   }
   buildGrid();
   addHover();
 });
+
+function getNewSize() {
+  let newSize = prompt("Pick a new size for the grid:");
+  while (isNaN(newSize) || newSize < 1 || newSize > 100) {
+    newSize = prompt(
+      "Hmm.  There's something wrong with your input.  Please enter a number between 1 and 100."
+    );
+  }
+  return newSize;
+}
