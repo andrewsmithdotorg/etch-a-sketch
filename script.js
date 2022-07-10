@@ -11,6 +11,7 @@ function buildGrid() {
       gridSquare.classList.add("grid-square");
       gridRow.appendChild(gridSquare);
       gridSquare.style.height = 600 / gridDimension + "px";
+      gridSquare.style.backgroundColor = "#cacfd5";
     }
   }
 }
@@ -21,7 +22,7 @@ function addHover() {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach((square) => {
     square.addEventListener("mouseenter", () => {
-      square.style.backgroundColor = "pink";
+      square.style.backgroundColor = "#606e81";
     });
   });
 }
