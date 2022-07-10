@@ -8,7 +8,7 @@ body {
 
 #container {
   border: 1px solid black;
-  width: 600px;
+  width: 800px;
   justify-content: center;
   margin: auto;
   margin-top: 100px;
@@ -29,6 +29,7 @@ body {
  display: flex;
  justify-content: center;
  padding: 40px;
+ gap: 5px;
 }
 
 button {

@@ -11,7 +11,7 @@ function buildGrid() {
       const gridSquare = document.createElement("div");
       gridSquare.classList.add("grid-square");
       gridRow.appendChild(gridSquare);
-      gridSquare.style.height = 600 / gridDimension + "px";
+      gridSquare.style.height = 800 / gridDimension + "px";
       gridSquare.style.backgroundColor = defaultSquareColor;
     }
   }
@@ -41,3 +41,13 @@ function resetGrid() {
     square.style.backgroundColor = defaultSquareColor;
   });
 }
+
+const resizeButton = document.querySelector("#resize-button");
+resizeButton.addEventListener("click", () => {
+  gridDimension = 70;
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+  buildGrid();
+  addHover();
+});
