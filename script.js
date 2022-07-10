@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector("#container");
 let gridDimension = 16;
+const defaultSquareColor = "#cacfd5";
 
 function buildGrid() {
   for (let i = 0; i < gridDimension; i++) {
@@ -11,7 +12,7 @@ function buildGrid() {
       gridSquare.classList.add("grid-square");
       gridRow.appendChild(gridSquare);
       gridSquare.style.height = 600 / gridDimension + "px";
-      gridSquare.style.backgroundColor = "#cacfd5";
+      gridSquare.style.backgroundColor = defaultSquareColor;
     }
   }
 }
@@ -28,3 +29,15 @@ function addHover() {
 }
 
 addHover();
+
+const resetButton = document.querySelector("#reset-button");
+resetButton.addEventListener("click", () => {
+  resetGrid();
+});
+
+function resetGrid() {
+  const squares = document.querySelectorAll(".grid-square");
+  squares.forEach((square) => {
+    square.style.backgroundColor = defaultSquareColor;
+  });
+}
