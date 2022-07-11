@@ -14,7 +14,9 @@ body {
 }
 
 #spacer {
-  width: 13%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 #container {
@@ -24,8 +26,8 @@ body {
   box-shadow: 15px 15px #202e41;
 }
 .grid-row {
-  flex: 1;
   display: flex;
+  flex: 1;
 }
 
 .grid-square {
@@ -35,13 +37,54 @@ body {
 
 #palette {
   display: flex;
+  height: auto;
+  width: 50%;
   padding: 5px;
-  width: 13%;
-  height: 100px;
-  color: whitesmoke;
-  background-color: #4c4e50;
+  background-color: #898e8c;
   border: 2px dotted black;
   box-shadow: 10px 10px #202e41;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+#palette-header {
+  width: 100%;
+  text-align: center;
+}
+
+.palette-swatch {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
+
+#palette-blue {
+  background-color: blue;
+}
+
+#palette-pink {
+  background-color: pink;
+}
+
+#palette-red {
+  background-color: red;
+}
+
+#palette-green {
+  background-color: green;
+}
+
+#palette-yellow {
+  background-color: yellow;
+}
+
+#palette-orange {
+  background-color: orange;
+}
+
+.palette-button {
+  height: 20px;
 }
 
 #menu {
