@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector("#container");
 let gridDimension = 16;
 const defaultSquareColor = "#cacfd5";
+const hoverSquareColor = "#606e81";
 
 function buildGrid() {
   for (let i = 0; i < gridDimension; i++) {
@@ -23,7 +24,7 @@ function addHover() {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach((square) => {
     square.addEventListener("mouseenter", () => {
-      square.style.backgroundColor = "#606e81";
+      square.style.backgroundColor = hoverSquareColor;
     });
   });
 }
