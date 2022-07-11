@@ -1,7 +1,8 @@
 const gridContainer = document.querySelector("#container");
 let gridDimension = 16;
 const defaultSquareColor = "#cacfd5";
-const hoverSquareColor = "#606e81";
+const startingPaintColor = "#606e81";
+let currentPaintColor = startingPaintColor;
 
 function buildGrid() {
   for (let i = 0; i < gridDimension; i++) {
@@ -20,28 +21,29 @@ function buildGrid() {
 
 buildGrid();
 
-function addHover() {
+function colorSquares(color) {
+  const squares = document.querySelectorAll(".grid-square");
+  squares.forEach((square) => {
+    square.style.backgroundColor = color;
+  })
+}
+
+function addHover(color) {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach((square) => {
     square.addEventListener("mouseenter", () => {
-      square.style.backgroundColor = hoverSquareColor;
+      square.style.backgroundColor = color;
     });
   });
 }
 
-addHover();
+addHover(startingPaintColor);
 
 const resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", () => {
-  resetGrid();
+  colorSquares(defaultSquareColor);
+  addHover(startingPaintColor);
 });
-
-function resetGrid() {
-  const squares = document.querySelectorAll(".grid-square");
-  squares.forEach((square) => {
-    square.style.backgroundColor = defaultSquareColor;
-  });
-}
 
 const resizeButton = document.querySelector("#resize-button");
 resizeButton.addEventListener("click", () => {
@@ -50,7 +52,7 @@ resizeButton.addEventListener("click", () => {
     gridContainer.removeChild(gridContainer.firstChild);
   }
   buildGrid();
-  addHover();
+  addHover(startingPaintColor);
 });
 
 function getNewSize() {
@@ -62,3 +64,33 @@ function getNewSize() {
   }
   return newSize;
 }
+
+const blueSwatch = document.querySelector("#palette-blue");
+blueSwatch.addEventListener("click", () => {
+  addHover("blue");
+})
+
+const pinkSwatch = document.querySelector("#palette-pink");
+pinkSwatch.addEventListener("click", () => {
+  addHover("pink");
+})
+
+const redSwatch = document.querySelector("#palette-red");
+redSwatch.addEventListener("click", () => {
+  addHover("red");
+})
+
+const greenSwatch = document.querySelector("#palette-green");
+greenSwatch.addEventListener("click", () => {
+  addHover("green");
+})
+
+const yellowSwatch = document.querySelector("#palette-yellow");
+yellowSwatch.addEventListener("click", () => {
+  addHover("yellow");
+})
+
+const orangeSwatch = document.querySelector("#palette-orange");
+orangeSwatch.addEventListener("click", () => {
+  addHover("orange");
+})
