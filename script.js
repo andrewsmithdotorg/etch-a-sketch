@@ -20,7 +20,7 @@ function buildGrid() {
 
 buildGrid();
 
-function colorSquares(color) {
+function colorAllSquares(color) {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach((square) => {
     square.style.backgroundColor = color;
@@ -40,7 +40,7 @@ pickPaintbrush(startingPaintColor);
 
 const resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", () => {
-  colorSquares(defaultSquareColor);
+  colorAllSquares(defaultSquareColor);
   pickPaintbrush(startingPaintColor);
 });
 
