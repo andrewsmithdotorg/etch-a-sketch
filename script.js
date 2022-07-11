@@ -1,8 +1,7 @@
 const gridContainer = document.querySelector("#container");
 let gridDimension = 16;
-const defaultSquareColor = "#cacfd5";
+const defaultSquareColor = "#eeeeee";
 const startingPaintColor = "#606e81";
-let currentPaintColor = startingPaintColor;
 
 function buildGrid() {
   for (let i = 0; i < gridDimension; i++) {
@@ -28,7 +27,7 @@ function colorSquares(color) {
   })
 }
 
-function addHover(color) {
+function pickPaintbrush(color) {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach((square) => {
     square.addEventListener("mouseenter", () => {
@@ -37,12 +36,12 @@ function addHover(color) {
   });
 }
 
-addHover(startingPaintColor);
+pickPaintbrush(startingPaintColor);
 
 const resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", () => {
   colorSquares(defaultSquareColor);
-  addHover(startingPaintColor);
+  pickPaintbrush(startingPaintColor);
 });
 
 const resizeButton = document.querySelector("#resize-button");
@@ -52,7 +51,7 @@ resizeButton.addEventListener("click", () => {
     gridContainer.removeChild(gridContainer.firstChild);
   }
   buildGrid();
-  addHover(startingPaintColor);
+  pickPaintbrush(startingPaintColor);
 });
 
 function getNewSize() {
@@ -67,30 +66,30 @@ function getNewSize() {
 
 const blueSwatch = document.querySelector("#palette-blue");
 blueSwatch.addEventListener("click", () => {
-  addHover("blue");
+  pickPaintbrush("blue");
 })
 
 const pinkSwatch = document.querySelector("#palette-pink");
 pinkSwatch.addEventListener("click", () => {
-  addHover("pink");
+  pickPaintbrush("pink");
 })
 
 const redSwatch = document.querySelector("#palette-red");
 redSwatch.addEventListener("click", () => {
-  addHover("red");
+  pickPaintbrush("red");
 })
 
 const greenSwatch = document.querySelector("#palette-green");
 greenSwatch.addEventListener("click", () => {
-  addHover("green");
+  pickPaintbrush("green");
 })
 
 const yellowSwatch = document.querySelector("#palette-yellow");
 yellowSwatch.addEventListener("click", () => {
-  addHover("yellow");
+  pickPaintbrush("yellow");
 })
 
 const orangeSwatch = document.querySelector("#palette-orange");
 orangeSwatch.addEventListener("click", () => {
-  addHover("orange");
+  pickPaintbrush("orange");
 })
